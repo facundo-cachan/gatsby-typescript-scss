@@ -1,0 +1,110 @@
+{
+  "name": "gatsby-typescript-boilerplate",
+  "description": "Gatsby Typescript boilerplate",
+  "version": "0.0.1",
+  "license": "MIT",
+  "browserslist": [
+    "defaults",
+    "ie >=9"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "tslint --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.{js,json}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*{.scss}": [
+      "stylelint --fix",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leachjustin18/gatsby-typescript-boilerplate"
+  },
+  "scripts": {
+    "clean": "gatsby clean",
+    "serve": "gatsby serve",
+    "build": "gatsby build --verbose",
+    "start": "yarn clean && gatsby develop --verbose",
+    "preload-fonts": "gatsby-preload-fonts",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "format-check": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "lint": "eslint --ignore-path .gitignore \"./**/*.{js,jsx,tx,tsx}\"",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "ci": "yarn format-check && yarn lint",
+    "analyze:lint": "eslint --ext .jsx --ext .js .",
+    "analyze:prettier": "prettier --list-different \"**/*.{css,js,jsx,json,md}\"",
+    "analyze": "yarn analyze:lint && yarn analyze:prettier",
+    "fix:lint": "eslint --ext .jsx --ext .js . --fix",
+    "fix:prettier": "prettier --write \"**/*.{css,js,jsx,json,md}\"",
+    "inspect": "node --no-lazy node_modules/.bin/gatsby develop --inspect-brk",
+    "fix": "yarn fix:lint && yarn fix:prettier",
+    "develop": "yarn start",
+    "dev": "yarn start"
+  },
+  "dependencies": {
+    "gatsby": "^2.0.45",
+    "gatsby-image": "^2.0.20",
+    "gatsby-plugin-canonical-urls": "^2.3.13",
+    "gatsby-plugin-crisp-chat": "^3.2.2",
+    "gatsby-plugin-eslint": "^2.0.8",
+    "gatsby-plugin-favicon": "^3.1.6",
+    "gatsby-plugin-google-analytics": "^2.3.19",
+    "gatsby-plugin-manifest": "^2.4.37",
+    "gatsby-plugin-netlify": "^2.3.25",
+    "gatsby-plugin-offline": "^3.2.38",
+    "gatsby-plugin-react-helmet": "^3.3.14",
+    "gatsby-plugin-react-native-web": "^3.1.0",
+    "gatsby-plugin-robots-txt": "^1.5.3",
+    "gatsby-plugin-sass": "^2.3.22",
+    "gatsby-plugin-sharp": "^2.6.43",
+    "gatsby-plugin-sitemap": "^2.4.17",
+    "gatsby-plugin-typescript": "^2.4.25",
+    "gatsby-source-filesystem": "^2.3.37",
+    "gatsby-transformer-sharp": "^2.5.20",
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1",
+    "react-helmet": "^5.2.0",
+    "react-native-web": "^0.14.6",
+    "typescript": "^3.1.6"
+  },
+  "devDependencies": {
+    "@babel/plugin-syntax-class-properties": "^7.12.1",
+    "@types/react": "^16.4.18",
+    "@types/react-dom": "^16.0.9",
+    "@types/react-helmet": "^5.0.7",
+    "autoprefixer": "^9.3.1",
+    "babel-plugin-react-native-classname-to-style": "^1.2.2",
+    "babel-plugin-react-native-platform-specific-extensions": "^1.1.1",
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^4.1.7",
+    "dotenv": "^8.2.0",
+    "eslint-loader": "^4.0.2",
+    "gatsby-plugin-tslint": "^0.0.2",
+    "husky": "^1.1.3",
+    "joi": "^17.3.0",
+    "lint-staged": "^8.0.4",
+    "node-sass": "^4.14.1",
+    "prettier": "^1.15.2",
+    "react-native-sass-transformer": "^1.4.0",
+    "stylelint": "^9.8.0",
+    "stylelint-config-recommended-scss": "^3.2.0",
+    "stylelint-scss": "^3.4.0",
+    "tslint": "^5.11.0",
+    "tslint-config-airbnb": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "tslint-loader": "^3.5.4",
+    "tslint-plugin-prettier": "^2.0.1",
+    "tslint-react": "^3.6.0"
+  }
+}
